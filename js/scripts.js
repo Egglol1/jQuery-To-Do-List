@@ -13,7 +13,7 @@ function newItem(){
        }
     
      //2. Crossing out an item from the list of items:
-     li.on("dblclick", function() {
+     li.on("dblclick", function crossOut() {
         li.toggleClass('strike');
        });
     
@@ -22,9 +22,7 @@ function newItem(){
          deleteButton.append(document.createTextNode("X"));
          li.append(deleteButton);
     
-         $deleteButton.on("click", function() {
-            deleteListItem()
-         });
+         deleteButton.on("click", deleteListItem)
      //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
        function deleteListItem(){
              li.addClass("delete")
